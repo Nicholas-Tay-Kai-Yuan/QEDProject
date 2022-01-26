@@ -90,7 +90,7 @@ const options = {
 // run database connect
 (async () => {
     try {
-connection = await mongoose.connect(localurl, options);
+connection = await mongoose.connect("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false", options);
 console.log("SUCCESS Connected to database");
 
 schedule.scheduleJob('0 0 * * SAT', async () => {
